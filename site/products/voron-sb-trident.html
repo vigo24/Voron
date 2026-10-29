@@ -37,7 +37,40 @@
 <p><span class="tag">Documentation preview</span> <span class="tag">Validation pending</span></p>
 <div class="note"><p>Physical prototyping has taken place, but the public assembly instructions, complete BOM and compatibility matrix have not yet passed a documented release review. Do not treat this page as an installation or safety certification.</p></div>
 <h3>Photo gallery</h3>
-<div class="photo">Project photographs and annotated component views will be added after selection and review.</div>
+<div class="photo">
+  <img id="mainPhoto"
+       src="images/IMG_2415.webp"
+       alt="VIGO SB Trident toolhead"
+       style="width:100%;max-height:550px;object-fit:contain;border-radius:10px;">
+</div>
+
+<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;">
+  <script>
+    const photos = [
+      "IMG_2415.webp",
+      "IMG_2416.webp",
+      "IMG_2418.webp",
+      "IMG_2419.webp",
+      "IMG_2421.webp",
+      "IMG_2422.webp",
+      "IMG_2423.webp",
+      "IMG_2424.webp",
+      "IMG_2425.webp"
+    ];
+
+    photos.forEach(name => {
+      const img = document.createElement("img");
+      img.src = "images/" + name;
+      img.alt = "SB Trident product view";
+      img.style = "width:85px;height:85px;object-fit:cover;cursor:pointer;border-radius:6px;border:1px solid #555;";
+      img.onclick = () => {
+        document.getElementById("mainPhoto").src = img.src;
+      };
+      document.getElementById("mainPhoto").parentElement.nextElementSibling.appendChild(img);
+    });
+  </script>
+</div>
+
 </section>
 <section id="assembly"><h2>Assembly Guide</h2><p>Step-by-step instructions will be published after validation.</p></section>
 <section id="bom"><h2>BOM</h2><p>Verified parts and non-affiliate links will be added here. No affiliate links are active.</p></section>
